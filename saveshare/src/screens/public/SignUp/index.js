@@ -11,16 +11,16 @@ import {
 import {useForm} from 'react-hook-form';
 import {Alert, ScrollView, Platform} from 'react-native';
 import {validationSchema, defaultValues} from './schema';
-import Api from '../../../services/api';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import {yupResolver} from '@hookform/resolvers';
-import AsyncStorage from '@react-native-community/async-storage';
-import {UserContext} from '../../../contexts/UserContext';
+import {AuthContext} from '../../../contexts/AuthProvider';
 import Brand from '../../../components/Brand';
+import auth from '@react-native-firebase/auth';
 
 const SignUp = () => {
-  const {dispatch: userDispatch} = useContext(UserContext);
+  const {register: AuthRegister, setUser} = useContext(AuthContext);
+
   const navigation = useNavigation();
 
   const {register, handleSubmit, setValue, errors} = useForm({
@@ -35,22 +35,30 @@ const SignUp = () => {
   }, [register]);
 
   const onSubmit = async ({name, email, password}) => {
-    const response = await Api.signUp(name, email, password);
+    const response = await AuthRegister(name, email, password);
 
-    if (!response.token) {
-      return Alert.alert('Ops', 'E-mail ou senha inválidos.');
+    if (response?.code === 'auth/email-already-in-use') {
+      return Alert.alert('Ops', 'Este e-mail já está em uso.');
     }
 
-    await AsyncStorage.setItem('token', response.token);
+    if (response?.code === 'auth/invalid-email') {
+      return Alert.alert('Ops', 'E-mail inválido.');
+    }
 
-    userDispatch({
-      type: 'setAvatar',
-      payload: {
-        avatar: response.data.avatar,
-      },
+    if (response?.code === 'auth/weak-password') {
+      return Alert.alert(
+        'Ops',
+        'A senha que você está utilizando não é segura.',
+      );
+    }
+
+    auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      }
     });
 
-    navigation.reset({
+    return navigation.reset({
       routes: [{name: 'MainTab'}],
     });
   };

@@ -11,16 +11,15 @@ import {
 import {useForm} from 'react-hook-form';
 import {Alert, ScrollView, Platform} from 'react-native';
 import {yupResolver} from '@hookform/resolvers';
-import Api from '../../../services/api';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import {validationSchema, defaultValues} from './schema';
-import AsyncStorage from '@react-native-community/async-storage';
-import {UserContext} from '../../../contexts/UserContext';
+import {AuthContext} from '../../../contexts/AuthProvider';
 import Brand from '../../../components/Brand';
 
 const SignIn = () => {
-  const {dispatch: userDispatch} = useContext(UserContext);
+  const {login: AuthLogin} = useContext(AuthContext);
+
   const navigation = useNavigation();
 
   const {register, handleSubmit, setValue, errors} = useForm({
@@ -34,22 +33,13 @@ const SignIn = () => {
   }, [register]);
 
   const onSubmit = async ({email, password}) => {
-    const response = await Api.signIn(email, password);
+    const response = await AuthLogin(email, password);
 
-    if (!response.token) {
+    if (response?.code) {
       return Alert.alert('Ops', 'E-mail ou senha inválidos.');
     }
 
-    await AsyncStorage.setItem('token', response.token);
-
-    userDispatch({
-      type: 'setAvatar',
-      payload: {
-        avatar: response.data.avatar,
-      },
-    });
-
-    navigation.reset({
+    return navigation.reset({
       routes: [{name: 'MainTab'}],
     });
   };

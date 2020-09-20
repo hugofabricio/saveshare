@@ -18,8 +18,8 @@ const Navigator = () => (
     <Tab.Screen name="Home" component={Home} />
     <Tab.Screen name="Search" component={Search} />
     <Tab.Screen name="Rents" component={Rents} />
-    <Tab.Screen name="Favorites" component={Favorites} />
     <Tab.Screen name="Profile" component={Profile} />
+    <Tab.Screen name="Favorites" component={Favorites} />
   </Tab.Navigator>
 );
 

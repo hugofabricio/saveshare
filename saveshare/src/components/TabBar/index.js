@@ -1,12 +1,18 @@
 import React, {useContext} from 'react';
 
-import {UserContext} from '../../contexts/UserContext';
+import {AuthContext} from '../../contexts/AuthProvider';
 import {TabArea, TabItem, TabItemCenter, Icon, Avatar} from './styled';
 
 const TabBar = ({state, navigation}) => {
-  const {state: user} = useContext(UserContext);
+  const {user, logout: UserLogout} = useContext(AuthContext);
 
   const handleNavigate = (screenName) => navigation.navigate(screenName);
+
+  const handleSignOut = () => {
+    UserLogout();
+
+    navigation.reset({routes: [{name: 'SignIn'}]});
+  };
 
   return (
     <TabArea>
@@ -29,25 +35,20 @@ const TabBar = ({state, navigation}) => {
       <TabItemCenter onPress={() => handleNavigate('Rents')}>
         <Icon name="calendar" size={28} color="#fff" />
       </TabItemCenter>
-      <TabItem onPress={() => handleNavigate('Favorites')}>
-        <Icon
-          name="star"
-          size={24}
-          color="#5457ff"
-          active={state.index === 3}
-        />
-      </TabItem>
       <TabItem onPress={() => handleNavigate('Profile')}>
-        {user.avatar ? (
-          <Avatar source={{uri: user.avatar}} />
+        {user?.photoURL ? (
+          <Avatar source={{uri: user.photoURL}} />
         ) : (
           <Icon
             name="user"
             size={24}
             color="#5457ff"
-            active={state.index === 4}
+            active={state.index === 3}
           />
         )}
+      </TabItem>
+      <TabItem onPress={handleSignOut}>
+        <Icon name="log-out" size={24} color="#5457ff" />
       </TabItem>
     </TabArea>
   );

@@ -1,57 +1,44 @@
-import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 
-const BASE_API = 'https://api.b7web.com.br/devbarber/api';
-
-const instance = axios.create({
-  baseURL: BASE_API,
-});
-
 export default {
-  checkToken: async (token) => {
+  getLocation: async (lat, lng) => {
     try {
-      const {data} = await instance.post('/auth/refresh', {
-        token,
-      });
+      const {data} = await axios.get(
+        'https://geocode.search.hereapi.com/v1/revgeocode',
+        {
+          params: {
+            apiKey: 'caOwBQv3-2hnP08Aj-wWUOuN250GKGQKbO9_KXlaq6Y',
+            at: `${lat},${lng}`,
+            lang: 'pt-BR',
+          },
+        },
+      );
 
-      return data;
+      return data.items[0];
     } catch (error) {
-      return false;
-    }
-  },
-  signIn: async (email, password) => {
-    try {
-      const {data} = await instance.post('/auth/login', {
-        email,
-        password,
-      });
-
-      return data;
-    } catch (error) {
-      return false;
-    }
-  },
-  signUp: async (name, email, password) => {
-    try {
-      const {data} = await instance.post('/user', {
-        name,
-        email,
-        password,
-      });
-
-      return data;
-    } catch (error) {
-      return false;
+      return [];
     }
   },
   getResults: async (params) => {
     try {
-      const token = AsyncStorage.getItem('token');
-
       const {data} = await axios.get(
-        'https://saveshare.netlify.app/api/list.json',
+        'https://run.mocky.io/v3/ae13da01-660f-4b38-88a3-a0d46a02ea75',
         {
-          params: {token, ...params},
+          params,
+        },
+      );
+
+      return data;
+    } catch (error) {
+      return [];
+    }
+  },
+  getResult: async (id) => {
+    try {
+      const {data} = await axios.get(
+        'https://run.mocky.io/v3/001c82d9-a223-4a7d-b7f0-94a07af83939',
+        {
+          id,
         },
       );
 

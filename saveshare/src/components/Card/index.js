@@ -15,29 +15,48 @@ import {
   RatingIcon,
   RatingLabel,
 } from './styled';
+import {useNavigation} from '@react-navigation/native';
 
-const Card = ({title, image, location, price, rate, ...rest}) => (
-  <Container activeOpacity={0.6}>
-    <Background source={{uri: image}} resizeMode="cover">
-      <Caption>
-        <Title>{title}</Title>
-        <Location>
-          <LocationIcon name="map-pin" size={16} color="#1EECBC" />
-          <LocationLabel>{location.neighborhood}</LocationLabel>
-        </Location>
-        <Footing>
-          <Amount>
-            {price.value}
-            <AmountPeriod>/{price.period}</AmountPeriod>
-          </Amount>
-          <Rating>
-            <RatingIcon name="star" size={16} color="#FFE600" />
-            <RatingLabel>{rate}</RatingLabel>
-          </Rating>
-        </Footing>
-      </Caption>
-    </Background>
-  </Container>
-);
+const Card = ({id, title, image, location, price, rate}) => {
+  const navigation = useNavigation();
+
+  const handleOnClick = () => {
+    navigation.navigate('Building', {
+      id,
+      title,
+      image,
+      location,
+      price,
+      rate,
+    });
+  };
+
+  return (
+    <Container onPress={handleOnClick} activeOpacity={0.6}>
+      <Background source={{uri: image}} resizeMode="cover">
+        <Caption>
+          <Title>{title}</Title>
+          <Location>
+            <LocationIcon name="map-pin" size={16} color="#1EECBC" />
+            <LocationLabel>{location.neighborhood}</LocationLabel>
+          </Location>
+          <Footing>
+            <Amount>
+              {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format(price.value)}
+              <AmountPeriod>/{price.period}</AmountPeriod>
+            </Amount>
+            <Rating>
+              <RatingIcon name="star" size={16} color="#FFE600" />
+              <RatingLabel>{rate}</RatingLabel>
+            </Rating>
+          </Footing>
+        </Caption>
+      </Background>
+    </Container>
+  );
+};
 
 export default Card;

@@ -1,4 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useContext, useState, useEffect} from 'react';
 import {
   SafeView,
@@ -16,14 +16,14 @@ import {
 import {Platform, RefreshControl} from 'react-native';
 import Input from '../../../components/Input';
 import Card from '../../../components/Card';
-import {UserContext} from '../../../contexts/UserContext';
+import {AuthContext} from '../../../contexts/AuthProvider';
 import menu from './menu';
 import {request, PERMISSIONS} from 'react-native-permissions';
 import Geolocation from '@react-native-community/geolocation';
 import Api from '../../../services/api';
 
 const Home = () => {
-  const {state: user} = useContext(UserContext);
+  const {user} = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [coords, setCoords] = useState({});
   const [location, setLocation] = useState('');
@@ -44,9 +44,8 @@ const Home = () => {
       setLocation('');
       setResults([]);
 
-      Geolocation.getCurrentPosition((info) => {
+      Geolocation.getCurrentPosition(async (info) => {
         setCoords(info.coords);
-
         getResults();
       });
     }
@@ -56,11 +55,14 @@ const Home = () => {
     setLoading(true);
     setResults([]);
 
-    const {latitude, longitude} = coords;
+    const data = await Api.getResults({location});
 
-    const data = await Api.getResults(latitude, longitude, location);
+    setResults(data.results);
 
-    setResults(data);
+    if (data.loc) {
+      setLocation(data.loc);
+    }
+
     setLoading(false);
   };
 
@@ -92,7 +94,9 @@ const Home = () => {
           contentContainerStyle={{flex: loading}}
           keyboardShouldPersistTaps="handled">
           <HeaderArea>
-            <HeaderTitle numberOfLines={2}>Olá, {user.name}</HeaderTitle>
+            <HeaderTitle numberOfLines={2}>
+              Olá, {user?.displayName}
+            </HeaderTitle>
             <HeaderSubtitle>Encontre espaços para o seu negócio</HeaderSubtitle>
           </HeaderArea>
 
@@ -106,7 +110,7 @@ const Home = () => {
               removeBorder
               value={location}
               onChangeText={(value) => setLocation(value)}
-              onSubmitEditing={handleLocationSearch}
+              onEndEditing={handleLocationSearch}
             />
           </LocationArea>
 

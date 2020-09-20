@@ -40,7 +40,11 @@ export const LocationIcon = styled(FeatherIcon)`
   margin-right: 6px;
 `;
 
-export const LocationLabel = styled.Text``;
+export const LocationLabel = styled.Text`
+  font-family: 'Poppins-Medium';
+  font-size: 12px;
+  color: #95a5a6;
+`;
 
 export const Footing = styled.View`
   flex-direction: row;

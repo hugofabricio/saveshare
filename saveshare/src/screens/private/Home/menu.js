@@ -1,6 +1,6 @@
 export default [
   {
-    icon: 'heart',
+    icon: 'star',
     label: 'Super Host',
   },
   {
@@ -12,7 +12,7 @@ export default [
     label: 'Em alta',
   },
   {
-    icon: 'bookmark',
+    icon: 'heart',
     label: 'Favoritos',
   },
 ];
