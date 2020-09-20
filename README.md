@@ -7,7 +7,11 @@
 - Clone the repo: `$ git clone git@github.com:hugofabricio/saveshare.git`
 - Access mobile dir: `$ cd mobile`
 - Install dependencies: `$ yarn or npm install`
+
+IOS
+
 - Install Pods: `$ cd ios && pod install`
+- Run: `$ yarn ios`
 
 ### Dependencies
 
