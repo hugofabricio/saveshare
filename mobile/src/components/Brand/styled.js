@@ -1,21 +1,9 @@
-import Logo from '../../assets/vectors/brand.svg';
 import styled from 'styled-components/native';
 import {isString} from '../../util/type-check';
 
-export const BrandLogo = styled(Logo)`
-  color: ${({color}) => color};
-
-  ${({width}) =>
-    width &&
-    `
-    width: ${isString(width) ? width : `${width}px`};
-  `}
-
-  ${({height}) =>
-    height &&
-    `
-    height: ${isString(height) ? height : `${height}px`};
-  `}
+export const BrandArea = styled.View`
+  width: 80%;
+  height: 40px;
 
   ${({marginTop}) =>
     marginTop &&

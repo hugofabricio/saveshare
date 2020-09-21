@@ -32,6 +32,8 @@ export const Field = styled.TextInput`
   font-size: 14px;
   font-family: 'Poppins-Medium';
   color: ${({textColor}) => textColor};
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
 `;
 
 export const IconButton = styled(RectButton).attrs({
