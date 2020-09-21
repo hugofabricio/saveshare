@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useContext, useState, useEffect} from 'react';
 import {
@@ -91,7 +92,7 @@ const Home = () => {
               onRefresh={handleOnRefresh}
             />
           }
-          contentContainerStyle={{flex: loading}}
+          contentContainerStyle={{flex: loading ? 1 : 0}}
           keyboardShouldPersistTaps="handled">
           <HeaderArea>
             <HeaderTitle numberOfLines={2}>

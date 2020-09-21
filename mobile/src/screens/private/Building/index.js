@@ -35,6 +35,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import Api from '../../../services/api';
 import Swiper from 'react-native-swiper';
 import Button from '../../../components/Button';
+import currency from 'currency.js';
 
 const Building = () => {
   const navigate = useNavigation();
@@ -103,10 +104,11 @@ const Building = () => {
               </Location>
               {result.price && (
                 <Amount>
-                  {new Intl.NumberFormat('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                  }).format(result.price.value)}
+                  {currency(result.price.value, {
+                    separator: '.',
+                    decimal: ',',
+                    symbol: 'R$ ',
+                  }).format()}
                   <AmountPeriod>/{result.price.period}</AmountPeriod>
                 </Amount>
               )}

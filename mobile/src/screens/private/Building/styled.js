@@ -13,6 +13,7 @@ export const Container = styled.View`
 
 export const Scroller = styled.ScrollView`
   flex: 1;
+  margin-bottom: 120px;
 `;
 
 export const LoadingIcon = styled.ActivityIndicator`
@@ -105,7 +106,7 @@ export const Footing = styled.View`
   bottom: 0;
   right: 0;
   background-color: #ffffff;
-  padding: 24px 24px ${10 + getBottomSpace()}px;
+  padding: 24px 24px ${24 + getBottomSpace()}px;
   flex-direction: row;
   justify-content: center;
   align-items: center;

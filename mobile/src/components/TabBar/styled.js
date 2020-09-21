@@ -11,7 +11,10 @@ export const TabArea = styled.View`
   box-shadow: 0px -4px 10px rgba(62, 68, 98, 0.05);
 `;
 
-export const TabItem = styled(RectButton).attrs({underlayColor: false})`
+export const TabItem = styled(RectButton).attrs({
+  underlayColor: '#fff',
+  rippleColor: '#fff',
+})`
   flex: 1;
   justify-content: center;
   align-items: center;

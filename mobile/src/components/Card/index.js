@@ -1,5 +1,6 @@
 import React from 'react';
 
+import currency from 'currency.js';
 import {
   Container,
   Background,
@@ -42,10 +43,11 @@ const Card = ({id, title, image, location, price, rate}) => {
           </Location>
           <Footing>
             <Amount>
-              {new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-              }).format(price.value)}
+              {currency(price.value, {
+                separator: '.',
+                decimal: ',',
+                symbol: 'R$ ',
+              }).format()}
               <AmountPeriod>/{price.period}</AmountPeriod>
             </Amount>
             <Rating>

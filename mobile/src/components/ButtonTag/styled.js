@@ -3,7 +3,8 @@ import {RectButton} from 'react-native-gesture-handler';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 export const Container = styled(RectButton).attrs({
-  underlayColor: false,
+  underlayColor: 'transparent',
+  rippleColor: 'transparent',
 })`
   align-items: center;
 `;
