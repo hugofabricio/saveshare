@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "77628161681",
+    "firebase_url": "https://saveshare-da7fb.firebaseio.com",
+    "project_id": "saveshare-da7fb",
+    "storage_bucket": "saveshare-da7fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77628161681:android:bc6c8daf926e8c90890930",
+        "android_client_info": {
+          "package_name": "com.saveshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77628161681-t7k9sc0ljc0990vmq6aecbgi3km5neoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA9wjopb9q6Ikh46vZM-whJzTqtsULB1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77628161681-t7k9sc0ljc0990vmq6aecbgi3km5neoa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "77628161681-c744u1hin9u0ad6cbr3kvh06p3d330gc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.saveshare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -25,7 +25,7 @@ export const SignUpButton = styled.TouchableOpacity`
   border-top-width: 1px;
   border-color: #3d3fdb;
   background-color: #5457ff;
-  padding: 24px 0 ${16 + getBottomSpace()}px;
+  padding: 24px 0 ${24 + getBottomSpace()}px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
