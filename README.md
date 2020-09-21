@@ -13,6 +13,10 @@ IOS
 - Install Pods: `$ cd ios && pod install`
 - Run: `$ yarn ios`
 
+Android
+
+- Run: `$ yarn android`
+
 ### Dependencies
 
 - React
