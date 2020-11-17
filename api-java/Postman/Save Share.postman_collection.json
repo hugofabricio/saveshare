@@ -1,0 +1,936 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Save Share",
+		"_postman_id": "0b114591-6104-3c11-8ff5-3225f20d0967",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Reservas",
+			"description": "",
+			"item": [
+				{
+					"name": "Cadastra reserva",
+					"request": {
+						"url": "http://localhost:8086/reservas",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idDisponibilidade\": \"1\",\n    \"idUsuario\": \"1\",\n    \"idImovel\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca reserva por id",
+					"request": {
+						"url": "http://localhost:8086/reservas/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cancelar reserva",
+					"request": {
+						"url": "http://localhost:8086/reservas/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lista reservas",
+					"request": {
+						"url": "http://localhost:8086/reservas",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lista reservas por id usuario",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8086/reservas/usuario?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"reservas",
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"description": "",
+			"item": [
+				{
+					"name": "Lista usuários",
+					"request": {
+						"url": "http://localhost:8086/usuarios",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca usuário por Id",
+					"request": {
+						"url": "http://localhost:8086/usuarios/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastra usuário",
+					"request": {
+						"url": "http://localhost:8086/usuarios",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuario\": 1,\n    \"nome\": \"Maria\",\n    \"sobrenome\": \"Almeida\",\n    \"email\": \"maria@gmail.com\",\n    \"senha\": \"123\",\n    \"cpf\": \"1234567845\",\n    \"telefone\": \"12345689\",\n    \"dataNascimento\": \"17/08/1987\",\n    \"status\": true,\n    \"banco\": \"Bradesco\",\n    \"agencia\": \"5\",\n    \"conta\": \"4567\",\n    \"tipoConta\": \"Poupança\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Exclui usuário",
+					"request": {
+						"url": "http://localhost:8086/usuarios/1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Altera dados usuário",
+					"request": {
+						"url": "http://localhost:8086/usuarios/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuario\": 1,\n    \"nome\": \"Maria\",\n    \"sobrenome\": \"Almeida\",\n    \"telefone\": \"12345689\",\n    \"dataNascimento\": \"17/08/1987\",\n    \"status\": true,\n    \"tipo\": 1,\n    \"banco\": \"Bradesco\",\n    \"agencia\": \"5\",\n    \"conta\": \"4567\",\n    \"tipoConta\": \"Poupança\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca dados bancários por Id",
+					"request": {
+						"url": "http://localhost:8086/dados-bancarios/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"url": "http://localhost:8086/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"ana@gmail.com\",\n\t\"senha\": \"rosa1010\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Imóveis",
+			"description": "",
+			"item": [
+				{
+					"name": "Disponibilidade",
+					"description": "",
+					"item": [
+						{
+							"name": "Lista disponibilidades",
+							"request": {
+								"url": "http://localhost:8086/imoveis-disponibilidade",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastra Disponibilidade",
+							"request": {
+								"url": "http://localhost:8086/imoveis-disponibilidade",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"horaInicial\": \"15/11/2020 10:00\",\n    \"horaFinal\": \"15/11/2020 17:00\",\n    \"idImovel\": 1\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Busca disponibilidade por id",
+							"request": {
+								"url": "http://localhost:8086/imoveis-disponibilidade/1",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Comodidades",
+					"description": "",
+					"item": [
+						{
+							"name": "Cadastra comodidade",
+							"request": {
+								"url": "http://localhost:8086/imoveis-comodidade",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"titulo\": \"Clínica\",\n    \"icone\": \"não sei o que é isso\",\n    \"idImovel\": 1\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Lista comodidades",
+							"request": {
+								"url": "http://localhost:8086/imoveis-comodidade",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Busca comodidades por id",
+							"request": {
+								"url": "http://localhost:8086/imoveis-comodidade/1",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Fotos",
+					"description": "",
+					"item": [
+						{
+							"name": "Cadastrar foto",
+							"request": {
+								"url": "http://localhost:8086/imoveis/foto",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "foto",
+											"description": "",
+											"type": "file",
+											"src": "20200220_151727-COLLAGE.jpg"
+										},
+										{
+											"key": "legenda",
+											"value": "teste",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "usuario",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "imovel",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Busca foto por id",
+							"request": {
+								"url": {
+									"raw": "http://localhost:8086/imoveis/foto?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8086",
+									"path": [
+										"imoveis",
+										"foto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "foto",
+											"description": "",
+											"type": "file",
+											"src": "20200220_151727-COLLAGE.jpg"
+										},
+										{
+											"key": "legenda",
+											"value": "teste",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "usuario",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "imovel",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Lista tipos imoveis",
+					"request": {
+						"url": "http://localhost:8086/tipos-imovel",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca tipo imóvel por id",
+					"request": {
+						"url": "http://localhost:8086/tipos-imovel/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastra imovel",
+					"request": {
+						"url": "http://localhost:8086/imoveis",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Consultório completo\",\n    \"descricao\": \"Ótima localização\",\n    \"valorHora\": \"100.00\",\n    \"valorDia\": \"300.00\",\n    \"valorSemana\": \"1200.00\",\n    \"cep\": \"05587001\",\n    \"logradouro\": \"R das Margaridas\",\n    \"numero\": \"17\",\n    \"complemento\": \"conj 3\",\n    \"bairro\": \"Jd das flores\",\n    \"cidade\": \"Uberlândia\",\n    \"uf\": \"MG\",\n    \"idUsuario\": 1,\n    \"idTipoImovel\": 3\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lista imoveis",
+					"request": {
+						"url": "http://localhost:8086/imoveis",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Busca imovel por id",
+					"request": {
+						"url": "http://localhost:8086/imoveis/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir imovel",
+					"request": {
+						"url": "http://localhost:8086/imoveis/1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lista imoveis por usuário",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8086/imoveis/usuario?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"imoveis",
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Avaliacoes",
+			"description": "",
+			"item": [
+				{
+					"name": "Cadastra avaliacao",
+					"request": {
+						"url": "http://localhost:8086/avaliacao",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comentario\": \"Muito bom!\",\n    \"nota\": 4.0,\n    \"idUsuario\": 2,\n    \"idReserva\": 1\n}\n\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lista avaliacoes usuario",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8086/avaliacao/usuario?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"avaliacao",
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comentario\": \"Muito bom!\",\n    \"nota\": 4.0,\n    \"idUsuario\": 2,\n    \"idReserva\": 1\n}\n\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lista avaliacoes imovel",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8086/avaliacao/imovel?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"avaliacao",
+								"imovel"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comentario\": \"Muito bom!\",\n    \"nota\": 4.0,\n    \"idUsuario\": 2,\n    \"idReserva\": 1\n}\n\n"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Busca fotos imovel",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8086/imoveis/fotos?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"imoveis",
+						"fotos"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFAZ21haWwuY29tIiwiZXhwIjoxNjA4MDk0Njg3fQ.tU1qQ0xdraDOIFcHyl6MBbR_tztyj_PwSo45gMN_BWZbYw0-VOAZqbtIyLA5hQAJrfcsxfcBv3VsjXVmkwOFWw",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "foto",
+							"description": "",
+							"type": "file",
+							"src": "20200220_151727-COLLAGE.jpg"
+						},
+						{
+							"key": "legenda",
+							"value": "teste",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "usuario",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "imovel",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
