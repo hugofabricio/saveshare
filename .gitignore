@@ -1,3 +1,10 @@
 mock
 .DS_Store
 saveshare-a
+/api-java/.classpath
+/api-java/.settings/*
+/api-java/bin/*
+/api-java/target/*
+/api-java/.mvn/*
+/api-java/.project
+/api-java/bin/

@@ -1,0 +1,8 @@
+.classpath
+.settings/*
+bin/*
+target/*
+.mvn/*
+.project
+/bin/
+Postman/*
